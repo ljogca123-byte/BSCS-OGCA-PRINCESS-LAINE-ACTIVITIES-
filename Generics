@@ -1,0 +1,33 @@
+// 1. Define a Generic Class with type parameter <T>
+class Storage<T> {
+    // 2. Private variable to hold the item
+    private T item;
+
+    // 2. Method to set the item
+    public void setItem(T item) {
+        this.item = item;
+    }
+
+    // 2. Method to get the item
+    public T getItem() {
+        return item;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // 3. Test with String
+        Storage<String> stringStorage = new Storage<>();
+        stringStorage.setItem("Java Generics are powerful!");
+        System.out.println("String Storage: " + stringStorage.getItem());
+
+        // 3. Test with Integer
+        Storage<Integer> intStorage = new Storage<>();
+        intStorage.setItem(2026);
+        System.out.println("Integer Storage: " + intStorage.getItem());
+
+        // 4. Observe Type Safety
+        // The line below would cause a COMPILE ERROR if uncommented:
+        // stringStorage.setItem(123); // Cannot put Integer into Storage<String>
+    }
+}
